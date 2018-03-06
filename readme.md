@@ -1,6 +1,6 @@
 # Google gperftools + libunwind for CentOS 7 64bit
 
-RPMs build are saved to
+RPMs built are saved to
 
 * `/svr-setup/cmm-gperftools-2.6.3-1.el7.x86_64.rpm`
 * `/svr-setup/cmm-libunwind-1.2.1-1.el7.x86_64.rpm`
@@ -31,6 +31,37 @@ libunwind.so.8()(64bit)
 ```
 cd /svr-setup
 yum localinstall cmm-libunwind-1.2.1-1.el7.x86_64.rpm cmm-gperftools-2.6.3-1.el7.x86_64.rpm 
+```
+
+```
+yum info cmm-gperftools -q
+Installed Packages
+Name        : cmm-gperftools
+Arch        : x86_64
+Version     : 2.6.3
+Release     : 1.el7
+Size        : 33 M
+Repo        : installed
+Summary     : gperftools-2.6.3 for centminmod.com LEMP stack installs
+URL         : https://centminmod.com
+License     : unknown
+Description : gperftools-2.6.3 for centminmod.com LEMP stacks
+
+```
+
+```
+yum info cmm-libunwind -q
+Installed Packages
+Name        : cmm-libunwind
+Arch        : x86_64
+Version     : 1.2.1
+Release     : 1.el7
+Size        : 3.6 M
+Repo        : installed
+Summary     : libunwind-1.2.1 for centminmod.com LEMP stack installs
+URL         : https://centminmod.com
+License     : unknown
+Description : libunwind-1.2.1 for centminmod.com LEMP stacks
 ```
 
 ```
