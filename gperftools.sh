@@ -247,7 +247,8 @@ install_libunwind() {
             yum -y localinstall ${DIR_TMP}/cmm-libunwind-${LIBUNWIND_VERSION}-1.${DISTTAG}.x86_64.rpm
         fi
     if [[ "$YUMINSTALL" = [yY] ]]; then
-        echo
+        echo "yum -y localinstall "${DIR_TMP}/cmm-libunwind-${LIBUNWIND_VERSION}-1.${DISTTAG}.x86_64.rpm""
+        yum -y localinstall "${DIR_TMP}/cmm-libunwind-${LIBUNWIND_VERSION}-1.${DISTTAG}.x86_64.rpm"
     else
         echo
     fi
@@ -308,7 +309,8 @@ install_gperftools() {
             yum -y localinstall ${DIR_TMP}/cmm-gperftools-${GPERFTOOLS_VERSION}-1.${DISTTAG}.x86_64.rpm
         fi
     if [[ "$YUMINSTALL" = [yY] ]]; then
-        echo
+        echo "yum -y localinstall "${DIR_TMP}/cmm-gperftools-${GPERFTOOLS_VERSION}-1.${DISTTAG}.x86_64.rpm""
+        yum -y localinstall "${DIR_TMP}/cmm-gperftools-${GPERFTOOLS_VERSION}-1.${DISTTAG}.x86_64.rpm"
     else
         echo
     fi
