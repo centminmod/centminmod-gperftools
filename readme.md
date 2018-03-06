@@ -6,29 +6,6 @@ RPMs built are saved to
 * `/svr-setup/cmm-libunwind-1.2.1-1.el7.x86_64.rpm`
 
 ```
-rpm -qp --provides cmm-gperftools-2.6.3-1.el7.x86_64.rpm
-cmm-gperftools = 2.6.3-1.el7
-cmm-gperftools(x86-64) = 2.6.3-1.el7
-libprofiler.so.0()(64bit)
-libtcmalloc.so.4()(64bit)
-libtcmalloc_and_profiler.so.4()(64bit)
-libtcmalloc_debug.so.4()(64bit)
-libtcmalloc_minimal.so.4()(64bit)
-libtcmalloc_minimal_debug.so.4()(64bit)
-```
-
-```
-rpm -qp --provides cmm-libunwind-1.2.1-1.el7.x86_64.rpm
-cmm-libunwind = 1.2.1-1.el7
-cmm-libunwind(x86-64) = 1.2.1-1.el7
-libunwind-coredump.so.0()(64bit)
-libunwind-ptrace.so.0()(64bit)
-libunwind-setjmp.so.0()(64bit)
-libunwind-x86_64.so.8()(64bit)
-libunwind.so.8()(64bit)
-```
-
-```
 cd /svr-setup
 yum localinstall cmm-libunwind-1.2.1-1.el7.x86_64.rpm cmm-gperftools-2.6.3-1.el7.x86_64.rpm 
 ```
