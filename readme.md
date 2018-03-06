@@ -41,6 +41,18 @@ Description : libunwind-1.2.1 for centminmod.com LEMP stacks
 ```
 
 ```
+rpm -qa --changelog cmm-gperftools
+* Tue Mar 06 2018 George Liu <centminmod.com> 1.2.1
+- gperftools 2.6.3 for centminmod.com LEMP stack installs
+```
+
+```
+rpm -qa --changelog cmm-libunwind  
+* Tue Mar 06 2018 George Liu <centminmod.com> 1.2.1
+- libunwind 1.2.1 for centminmod.com LEMP stack installs
+```
+
+```
 rpm -ql cmm-gperftools 
 /usr/local/bin/pprof
 /usr/local/include/google/heap-checker.h
