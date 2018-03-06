@@ -11,19 +11,18 @@ yum localinstall cmm-libunwind-1.2.1-1.el7.x86_64.rpm cmm-gperftools-2.6.3-1.el7
 ```
 
 ```
-yum info cmm-gperftools -q
+yum info cmm-gperftools -q                   
 Installed Packages
 Name        : cmm-gperftools
 Arch        : x86_64
 Version     : 2.6.3
 Release     : 1.el7
-Size        : 33 M
+Size        : 24 M
 Repo        : installed
 Summary     : gperftools-2.6.3 for centminmod.com LEMP stack installs
 URL         : https://centminmod.com
 License     : unknown
 Description : gperftools-2.6.3 for centminmod.com LEMP stacks
-
 ```
 
 ```
@@ -33,7 +32,7 @@ Name        : cmm-libunwind
 Arch        : x86_64
 Version     : 1.2.1
 Release     : 1.el7
-Size        : 3.6 M
+Size        : 2.5 M
 Repo        : installed
 Summary     : libunwind-1.2.1 for centminmod.com LEMP stack installs
 URL         : https://centminmod.com

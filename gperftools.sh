@@ -203,6 +203,7 @@ install_libunwind() {
         LIBUNWIND_RPMINSTALLDIR="/home/fpmtmp/fpm-libunwind-tmpinstall"
         cd "${DIR_TMP}"
         rm -rf "${LIBUNWIND_RPMINSTALLDIR}"
+        rpm -e cmm-libunwind --nodeps
         mkdir -p "${LIBUNWIND_RPMINSTALLDIR}"
         cd "${LIBUNWIND_LINKDIR}"
         ./configure
@@ -217,6 +218,22 @@ install_libunwind() {
             FPMCOMPRESS_OPT='--rpm-compression xz'
         else
             FPMCOMPRESS_OPT='--rpm-compression gzip'
+        fi
+
+        if [ -f "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind-coredump.so.0.0.0" ]; then
+            strip "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind-coredump.so.0.0.0"
+        fi
+        if [ -f "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind-ptrace.so.0.0.0" ]; then
+            strip "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind-ptrace.so.0.0.0"
+        fi
+        if [ -f "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind-setjmp.so.0.0.0" ]; then
+            strip "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind-setjmp.so.0.0.0"
+        fi
+        if [ -f "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind-x86_64.so.8.0.1" ]; then
+            strip "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind-x86_64.so.8.0.1"
+        fi
+        if [ -f "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind.so.8.0.1" ]; then
+            strip "${LIBUNWIND_RPMINSTALLDIR}/usr/local/lib/libunwind.so.8.0.1"
         fi
 
         echo -e "* $(date +"%a %b %d %Y") George Liu <centminmod.com> ${LIBUNWIND_VERSION}\n - libunwind ${LIBUNWIND_VERSION} for centminmod.com LEMP stack installs" > "libunwind-${LIBUNWIND_VERSION}-changelog"
@@ -257,6 +274,8 @@ install_libunwind() {
 install_gperftools() {
         GPERFTOOLS_RPMINSTALLDIR="/home/fpmtmp/fpm-gperftools-tmpinstall"
         cd "$DIR_TMP"
+        rm -rf "$GPERFTOOLS_RPMINSTALLDIR"
+        rpm -e cmm-gperftools --nodeps
         cd "${GPERFTOOL_LINKDIR}"
         make distclean
         if [[ "$(uname -m)" = 'x86_64' ]]; then
@@ -279,6 +298,25 @@ install_gperftools() {
             FPMCOMPRESS_OPT='--rpm-compression xz'
         else
             FPMCOMPRESS_OPT='--rpm-compression gzip'
+        fi
+
+        if [ -f "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libprofiler.so.0.4.16" ] ; then
+            strip "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libprofiler.so.0.4.16"
+        fi
+        if [ -f "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc.so.4.5.1" ] ; then
+            strip "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc.so.4.5.1"
+        fi
+        if [ -f "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc_and_profiler.so.4.5.1" ] ; then
+            strip "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc_and_profiler.so.4.5.1"
+        fi
+        if [ -f "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc_debug.so.4.5.1" ] ; then
+            strip "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc_debug.so.4.5.1"
+        fi
+        if [ -f "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc_minimal.so.4.5.1" ] ; then
+            strip "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc_minimal.so.4.5.1"
+        fi
+        if [ -f "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc_minimal_debug.so.4.5.1" ] ; then
+            strip "${GPERFTOOLS_RPMINSTALLDIR}/usr/local/lib/libtcmalloc_minimal_debug.so.4.5.1"
         fi
 
         echo -e "* $(date +"%a %b %d %Y") George Liu <centminmod.com> ${LIBUNWIND_VERSION}\n - gperftools ${GPERFTOOLS_VERSION} for centminmod.com LEMP stack installs" > "gperftools-${GPERFTOOLS_VERSION}-changelog"
